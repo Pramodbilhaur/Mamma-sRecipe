@@ -2,6 +2,7 @@ package com.example.mammasrecipe.room
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 
 @Entity("recipe")
@@ -15,4 +16,4 @@ data class Recipe (
     @JvmField
     @PrimaryKey(autoGenerate = true)
     var uid: Int = 0
-    )
+    ): Serializable

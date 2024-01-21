@@ -1,14 +1,11 @@
 package com.example.mammasrecipe
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.example.mammasrecipe.adapter.ExploreCategoryAdapter
 import com.example.mammasrecipe.databinding.ActivityCategoryBinding
-import com.example.mammasrecipe.model.Categories
-import com.example.mammasrecipe.myInterface.CategoryI
 import com.example.mammasrecipe.room.AppDatabase
 import com.example.mammasrecipe.room.Recipe
 

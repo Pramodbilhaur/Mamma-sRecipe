@@ -1,10 +1,13 @@
 package com.example.mammasrecipe.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.mammasrecipe.R
+import com.example.mammasrecipe.RecipeActivity
 import com.example.mammasrecipe.databinding.ItemSearchRvBinding
 import com.example.mammasrecipe.room.Recipe
 
@@ -20,15 +23,20 @@ class SearchAdapter(private val context: Context, private var dataList: ArrayLis
     }
 
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
-        holder.bind(dataList[position])
-    }
+        val recipe = dataList[position]
+        holder.binding.recipeName.text = recipe?.tittle
+        holder.binding.imageDish.load(recipe?.img){
+            placeholder(R.drawable.category_dessert)
+        }
 
-    inner class SearchViewHolder(val binding: ItemSearchRvBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(recipe: Recipe?) {
-            binding.recipeName.text = recipe?.tittle
-            binding.imageDish.load(recipe?.img)
+        holder.binding.clSearch.setOnClickListener {
+            val intent = Intent(context, RecipeActivity::class.java)
+            intent.putExtra("RECIPE", recipe)
+            context.startActivity(intent)
         }
     }
+
+    inner class SearchViewHolder(val binding: ItemSearchRvBinding): RecyclerView.ViewHolder(binding.root)
 
     fun filterList(newList: ArrayList<Recipe?>) {
         dataList.clear()

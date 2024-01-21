@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/pizza_sample"
             android:id="@+id/popular_image"
+            android:foregroundGravity="center"
             android:scaleType="centerCrop"
             android:contentDescription="@string/hello"/>
 

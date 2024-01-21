@@ -1,7 +1,13 @@
 package com.example.mammasrecipe
 
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.Gravity
+import android.view.ViewGroup
+import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
@@ -55,6 +61,19 @@ class HomeActivity : AppCompatActivity(), CategoryI {
         popularAdapter = PopularAdapter(this, dataList)
         binding.rvPopularCat.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.rvPopularCat.adapter = popularAdapter
+
+        binding.menu.setOnClickListener {
+            var dialog = Dialog(this)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setContentView(R.layout.bottom_sheet)
+            dialog.show()
+            dialog.window?.setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialog.window?.setGravity(Gravity.BOTTOM)
+        }
     }
 
     private fun createCategoryList(){

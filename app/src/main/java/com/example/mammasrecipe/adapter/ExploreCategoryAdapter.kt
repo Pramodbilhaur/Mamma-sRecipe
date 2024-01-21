@@ -1,11 +1,13 @@
 package com.example.mammasrecipe.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.mammasrecipe.R
+import com.example.mammasrecipe.RecipeActivity
 import com.example.mammasrecipe.databinding.ItemSelectCategoryBinding
 import com.example.mammasrecipe.room.Recipe
 
@@ -20,6 +22,7 @@ class ExploreCategoryAdapter(val context: Context, var dataList: ArrayList<Recip
     }
 
     override fun onBindViewHolder(holder: ExploreCategoryAdapter.MyViewHolder, position: Int) {
+        val recipe = dataList[position]
         with(holder.binding){
             ivDish.load(dataList[position].img){
                 placeholder(R.drawable.developer_ic)
@@ -27,6 +30,12 @@ class ExploreCategoryAdapter(val context: Context, var dataList: ArrayList<Recip
             tvDishName.text = dataList[position].tittle
             var temp = dataList[position].ing.split("\n").dropLastWhile { it.isEmpty() }.toTypedArray()
             tvDuration.text = temp[0]
+
+            ivOpen.setOnClickListener {
+                var intent = Intent(context, RecipeActivity::class.java)
+                intent.putExtra("RECIPE", recipe)
+                context.startActivity(intent)
+            }
         }
     }
 
