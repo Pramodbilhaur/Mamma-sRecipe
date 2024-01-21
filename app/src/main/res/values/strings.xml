@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Mamma\'s Recipe</string>
+    <string name="hello">Hello</string>
+    <string name="foodie">foodie!</string>
+    <string name="which_indian_food">Which indian food you like to cook?</string>
+    <string name="search_recipe">Search Recipe</string>
+    <string name="categories">Categories</string>
+    <string name="category">Category</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="foodie">foodie!</string>
+    <string name="which_indian_food">Which indian food you like to cook?</string>
+    <string name="search_recipe">Search Recipe</string>
+    <string name="categories">Categories</string>
+</resources>

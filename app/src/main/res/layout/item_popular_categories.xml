@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="22dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="210dp"
+        android:layout_height="190dp"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pizza_sample"
+            android:id="@+id/popular_image"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/hello"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/image_gradient"
+            android:layout_gravity="bottom"
+            android:src="@drawable/image_btm_overlay"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/popular_text"
+            android:layout_gravity="bottom"
+            android:text="here is the sample text"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/white"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="22dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/popular_time"
+            android:layout_gravity="bottom"
+            android:text="⏰ 20m"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:maxLength="7"
+            android:layout_marginBottom="7dp"
+            android:layout_marginStart="15dp"/>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>
